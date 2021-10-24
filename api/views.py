@@ -6,6 +6,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/add_movie', methods=['POST'])
 def add_movie():
+    """POST request to add a movie"""
     movie_data = request.get_json()
     new_movie = Movie(title=movie_data['title'],
                     rating=movie_data['rating'])
@@ -15,5 +16,9 @@ def add_movie():
 
 @main.route('/movies', methods=['GET'])
 def get_movies():
+    """GET Request to get all movies in the database"""
     movies = []
-    return jsonify({'movies':movies}) 
+    movies_list = Movie.query.all()
+    for movie in movies_list:
+        movies.append({'title':movie.title, 'rating':movie.rating})
+    return jsonify({'movies':movies})
