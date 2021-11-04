@@ -1,17 +1,32 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import { Container } from 'semantic-ui-react';
 import './App.css';
+import { MovieForm } from './components/MovieForm';
+import { Movies } from './components/Movies';
 
 
 
 function App() {
-  useEffect[()=>{
-    fetch('/movies')
-    .then(response => response.json()
-    .then(data => console.log(data)))
-  }, []]
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("/movies").then(response =>
+      response.json().then(data => {
+        setMovies(data.movies)
+      })
+    );
+  },[]);
+
+
   return (
     <div className="App">
-
+      <Container style={{ marginTop: 40 }}>
+        <MovieForm onNewMovie={movie =>
+           setMovies(currentMovies => [...currentMovies, movie])
+           }
+           /> 
+        <Movies movies = {movies} /> 
+      </Container>
     </div>
   );
 }
