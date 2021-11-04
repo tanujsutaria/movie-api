@@ -4,8 +4,6 @@ import './App.css';
 import { MovieForm } from './components/MovieForm';
 import { Movies } from './components/Movies';
 
-
-
 function App() {
   const [movies, setMovies] = useState([]);
 
@@ -16,7 +14,6 @@ function App() {
       })
     );
   },[]);
-
 
   return (
     <div className="App">

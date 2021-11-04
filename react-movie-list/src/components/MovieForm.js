@@ -22,7 +22,7 @@ export const MovieForm = ({onNewMovie}) => {
             </Form.Field>
             <Form.Field>
             <Button
-          onClick={async () => {
+            onClick={async () => {
             const movie = { title, rating };
             const response = await fetch('/add_movie', {
               method: 'POST',
@@ -38,10 +38,7 @@ export const MovieForm = ({onNewMovie}) => {
               setTitle("");
               setRating(1);
             }
-          }}
-        >
-          submit
-        </Button>
+          }}> submit</Button>
             </Form.Field>
         </Form>
     )
