@@ -4,7 +4,10 @@ API using Python Backend with React Frontend
 Building this out based on the tutorial by Pretty Printed and Ben Awad [1] [2]
 
 In order to run flask backend-
-1. Create a test db
+1. Run the following commands to run flask app-
+    a. export FLASK_APP=api
+    b. export FLASK_DEBUG=1 #For running app in debug mode
+2. Create a test db
     a. In api directory, start a python shell
     b. Use the following commands to create db-
         i. from api.models import Movie
