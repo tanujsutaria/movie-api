@@ -21,7 +21,7 @@ In order to run React frontend-
 2. Start app using the following-    
     i. npm start    
 
-References
+References    
 [1] Ben Awad, React Frontend https://www.youtube.com/watch?v=06pWsB_hoD4    
 [2] Pretty Printed, Flask Backend https://www.youtube.com/watch?v=Urx8Kj00zsI&t=0s    
 
